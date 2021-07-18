@@ -6,7 +6,7 @@
 /*   By: lmery <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 16:21:00 by lmery             #+#    #+#             */
-/*   Updated: 2021/07/18 19:28:49 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/07/18 19:02:28 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ char *ft_strcat(char *dest, char *src)
 	}
 	dest[dest_size + i] = '\0';
 	return (dest);
+}
+
+void    ft_putstr(char *str)
+{
+	int    i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
 
 int	dict_size(int fd)
@@ -75,15 +87,25 @@ char  **getter(void)
 	}
 	if (!(ft_parser(stocker)))
 		ft_putstr("Dict Error\n");
+//	printf("%d", ft_parser(stocker));
+//	printf("%s", stocker);
 	dico = ft_split(stocker, "\n");
 	i = 0;
 	k = 0;
-	dico = ft_tri(dico, (*ft_sort));
-	if (ft_tri(dico, (*ft_sort)) == 0)
+//	printf("%s\n", dico[0]);
+//	printf("%s\n", dico[19]);
+//	ft_rev(dico);
+/*	while (dico[i])
 	{
-		ft_putstr("Dict Error\n");
-		return (0);
-	}
+		printf("%s\n", dico[i]);
+		i++;
+	}*/
+	dico = ft_sort(dico, (*ft_contrast));
+	if (check_double(dico) == 0)
+    {
+        ft_putstr("Dict Error\n");
+        return (0);
+    }
 	while (dico[i])
 	{
 		printf("%s\n", dico[i]);
@@ -92,3 +114,12 @@ char  **getter(void)
 	
 	return (dico);
 }
+
+int	main(void)
+{
+	getter();
+	return (0);
+}
+	
+
+
