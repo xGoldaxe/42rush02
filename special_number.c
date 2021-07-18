@@ -6,11 +6,11 @@
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 18:15:00 by pleveque          #+#    #+#             */
-/*   Updated: 2021/07/18 18:25:32 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/07/18 19:24:59 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "ft_h.h"
 
 int	special_number(char *number)
 {
@@ -18,8 +18,8 @@ int	special_number(char *number)
 	int	i;
 
 	i = 0;
-	nb_len = ft_nbrlen(number);
-	if (nb_len >= 3)
+	nbr_len = ft_strlen(number);
+	if (nbr_len >= 3)
 	{
 		while (number[i] != '\0')
 		{
@@ -30,7 +30,7 @@ int	special_number(char *number)
 			i++;
 		}
 	}
-	if ((nb_len == 2) && (number[1] != '0'))
+	if ((nbr_len == 2) && (number[1] != '0'))
 		return (1);
 	return (0);
 }

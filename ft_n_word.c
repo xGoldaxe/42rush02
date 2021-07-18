@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base_char_cmp.c                                 :+:      :+:    :+:   */
+/*   ft_n_word.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amarchan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 18:27:34 by pleveque          #+#    #+#             */
-/*   Updated: 2021/07/18 19:06:10 by pleveque         ###   ########.fr       */
+/*   Created: 2021/07/18 15:17:45 by amarchan          #+#    #+#             */
+/*   Updated: 2021/07/18 15:37:48 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_h.h"
 
-int	ft_base_char_cmp(char nbr1, char nbr2, char *base)
+int	ft_n_word(char *str, char *charset)
 {
-	int	val_base1;
-	int	val_base2;
+	int	i;
 
-	val_base1 = pos_base(nbr1, base);
-	val_base2 = pos_base(nbr2, base);
-	return (val_base1 - val_base2);
+	i = 0;
+	while (ft_strinclude(str[i], charset) == 0 && str[i] != '\0')
+		i++;
+	return (i);
 }

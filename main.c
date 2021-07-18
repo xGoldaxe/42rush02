@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base_char_cmp.c                                 :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 18:27:34 by pleveque          #+#    #+#             */
-/*   Updated: 2021/07/18 19:06:10 by pleveque         ###   ########.fr       */
+/*   Created: 2021/07/18 19:28:55 by pleveque          #+#    #+#             */
+/*   Updated: 2021/07/18 19:33:17 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_h.h"
 
-int	ft_base_char_cmp(char nbr1, char nbr2, char *base)
+int	main(int argc, char **argv)
 {
-	int	val_base1;
-	int	val_base2;
-
-	val_base1 = pos_base(nbr1, base);
-	val_base2 = pos_base(nbr2, base);
-	return (val_base1 - val_base2);
+	char	**dico;
+	dico = getter();
+	if (dico == NULL)
+		return (0);
+	print_number_litteral(argv[1], dico);
 }

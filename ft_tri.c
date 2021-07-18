@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base_char_cmp.c                                 :+:      :+:    :+:   */
+/*   ft_tri.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amarchan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 18:27:34 by pleveque          #+#    #+#             */
-/*   Updated: 2021/07/18 19:06:10 by pleveque         ###   ########.fr       */
+/*   Created: 2021/07/18 16:25:52 by amarchan          #+#    #+#             */
+/*   Updated: 2021/07/18 18:38:35 by amarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_h.h"
 
-int	ft_base_char_cmp(char nbr1, char nbr2, char *base)
+char **ft_tri(char **str, int (*test)(char *str1, char *str2))
 {
-	int	val_base1;
-	int	val_base2;
+	int		i;
+	char	*tmp;
+	i = 0;
 
-	val_base1 = pos_base(nbr1, base);
-	val_base2 = pos_base(nbr2, base);
-	return (val_base1 - val_base2);
+	while (str[i + 1] != NULL)
+	{
+		if (test(str[i], str[i + 1]) < 0)
+		{
+			tmp = str[i];
+			str[i] = str[i + 1];
+			str[i + 1] = tmp;
+			i = -1;
+		}
+		i++;
+	}
+	return (str);
 }

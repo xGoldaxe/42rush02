@@ -6,11 +6,11 @@
 /*   By: pleveque <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 10:57:49 by pleveque          #+#    #+#             */
-/*   Updated: 2021/07/18 10:58:47 by pleveque         ###   ########.fr       */
+/*   Updated: 2021/07/18 19:06:43 by pleveque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "ft_h.h"
 
 int	pos_base(char c, char *base)
 {
