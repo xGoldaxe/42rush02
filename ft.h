@@ -14,5 +14,6 @@ int		ft_nbrcmp(char *nbr1, char *nbr2, char *base);
 int		pos_base(char c, char *base);
 int		ft_base_char_cmp(char nbr1, char nbr2, char *base);
 void	ft_putstr(char *str);
+int		special_number(char	*number);
 
 #endif
